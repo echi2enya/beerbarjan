@@ -12,6 +12,15 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Noto+Serif+JP:400,500,700&display=swap&subset=japanese'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -23,7 +32,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['swiper/css/swiper.css'],
+  css: [
+    '@/assets/style/common.scss',
+    'swiper/css/swiper.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -37,7 +49,8 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources'
   ],
   /*
    ** Axios module configuration
@@ -51,9 +64,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
     // vendor: [
     //   'vue-awesome-swiper'
     // ]
+
+    /*
+     ** Style resources css
+     */
+    styleResources: {
+      scss: ['@/assets/style/_styleResources']
+    }
   }
 }

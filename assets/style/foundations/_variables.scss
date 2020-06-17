@@ -1,0 +1,28 @@
+// z-index
+$z: base;
+// z-index: index($z, base);
+$zModal: 40;
+$zModalFront: $zModal + 1;
+$zModalBack: $zModal - 1;
+
+// breakPoint
+$breakPoints: 767;
+
+// width
+$widthContainer: 750;
+$widthDesktop: 640;
+
+// height
+
+// font
+$family-secondary: 'Noto Serif JP', 'Hiragino Mincho Pro', 'ヒラギノ明朝 Pro W3', 'ＭＳ 明朝', serif;
+$family-primary: 'Noto Sans JP', 'SF Pro JP', 'SF Pro Text', 'SF Pro Icons', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 游ゴシック, メイリオ, Meiryo, 'ＭＳ Ｐゴシック', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// // from bulma
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// path img
+$pathImage: '~@/assets/img/';
