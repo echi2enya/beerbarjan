@@ -1,33 +1,31 @@
-<template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        beerbarjan
-      </h1>
-      <h2 class="subtitle">
-        My extraordinary Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <font-awesome-icon icon="dollar-sign" />
-      <swiper>
-        <swiper-slide>スライド１</swiper-slide>
-        <swiper-slide>スライド２</swiper-slide>
-        <swiper-slide>スライド３</swiper-slide>
-      </swiper>
-    </div>
-  </div>
+<template lang="pug">
+  .l-content
+    header.l-header
+      swiper
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/hieda.jpg')
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/counter.jpg')
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/glass.jpg')
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/sign.jpg')
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/tap.jpg')
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/blank.jpg')
+        swiper-slide
+          .c-swiper
+            img.img(src='~assets/img/swiper/taps.jpg')
+    main.inner
+      font-awesome-icon(icon='dollar-sign')
+    footer
 </template>
 
 <script lang="ts">
@@ -43,35 +41,30 @@ import Logo from '~/components/Logo.vue'
 export default class extends Vue {}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+.l-header {
+  width: 100vw;
+  height: 100vh;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.l-content {
+  > .inner {
+    width: 980px;
+    margin: 0 auto;
+  }
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.c-swiper {
+  width: 100vw;
+  height: 100vh;
+  > .img {
+    object-fit: contain;
+    // object-position: center;
+  }
 }
-
-.links {
-  padding-top: 15px;
+@media (max-width: 767px) {
+  .l-content {
+    > .inner {
+      width: 100%;
+    }
+  }
 }
 </style>
