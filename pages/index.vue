@@ -20,6 +20,7 @@
           GitHub
         </a>
       </div>
+      <font-awesome-icon icon="dollar-sign" />
       <swiper>
         <swiper-slide>スライド１</swiper-slide>
         <swiper-slide>スライド２</swiper-slide>

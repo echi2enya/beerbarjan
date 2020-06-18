@@ -50,7 +50,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-fontawesome'
   ],
   /*
    ** Axios module configuration
@@ -69,11 +70,17 @@ export default {
     //   'vue-awesome-swiper'
     // ]
 
-    /*
-     ** Style resources css
-     */
     styleResources: {
       scss: ['@/assets/style/_styleResources']
     }
+  },
+
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }
+    ]
   }
 }
