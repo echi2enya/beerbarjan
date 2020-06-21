@@ -27,20 +27,19 @@
         swiper-slide
           img.c-swiper(src='~assets/img/swiper/taps.jpg')
     main.inner
-      p 四ッ谷荒木町のビールバーJAN(ジャン)です
-      p 2018年8月1日オープン
-      p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
-      p カウンター席、テーブル席、立ち飲みカウンター
-      p
-        | 日曜日定休
-        br
-        | ※月曜日が祝日の場合、土日営業し、月曜日がお休み
-      p クラフトビールは日々替わります！
-      p
-        | 新宿区荒木町2-15 2階
-        br
-        | 03-3226-1556
-    footer
+      //- p 四ッ谷荒木町のビールバーJAN(ジャン)です
+      //- p 2018年8月1日オープン
+      //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
+      //- p カウンター席、テーブル席、立ち飲みカウンター
+      //- p
+      //-   | 日曜日定休
+      //-   br
+      //-   | ※月曜日が祝日の場合、土日営業し、月曜日がお休み
+      //- p クラフトビールは日々替わります！
+      //- p
+      //-   | 新宿区荒木町2-15 2階
+      //-   br
+      //-   | 03-3226-1556
       //- font-awesome-icon(icon='dollar-sign')
       //- swiper
         swiper-slide
@@ -85,7 +84,7 @@ export default class extends Vue {}
 }
 .c-swiper {
   width: 100vw;
-  height: 90vh;
+  height: calc(100vh - 120px);
   object-fit: cover;
 }
 @media (max-width: 767px) {
