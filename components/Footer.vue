@@ -8,6 +8,12 @@
         strong.name ビールバーJAN
         |
         | 新宿区荒木町2-15 2階 03-3226-1556
+      nav.nav
+        nuxt-link.anchor(to='' v-scroll-to='"#top"') TOP
+        nuxt-link.anchor(to='' v-scroll-to='"#map"') MAP
+        nuxt-link.anchor(to='' v-scroll-to='"#information"') INFORMATION
+        nuxt-link.anchor(to='' v-scroll-to='"#new"') NEW
+        nuxt-link.anchor(to='' v-scroll-to='"#photo"') PHOTO
       //- p 2018年8月1日オープン
       //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
       //- p カウンター席、テーブル席、立ち飲みカウンター

@@ -27,6 +27,8 @@
         swiper-slide
           img.c-swiper(src='~assets/img/swiper/taps.jpg')
     main.inner
+      #map
+        img.c-swiper(src='~assets/img/swiper/taps.jpg')
       //- p 四ッ谷荒木町のビールバーJAN(ジャン)です
       //- p 2018年8月1日オープン
       //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ

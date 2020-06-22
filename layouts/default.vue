@@ -1,5 +1,5 @@
 <template lang="pug">
-  .l-container
+  .l-container#top
     nuxt
     Footer
 </template>
