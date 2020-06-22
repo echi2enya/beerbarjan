@@ -18,7 +18,7 @@ export default class extends Vue {}
 </script>
 
 <style lang="scss">
-  .l-container {
-    position: relative;
-  }
+.l-container {
+  position: relative;
+}
 </style>

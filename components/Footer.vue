@@ -19,30 +19,30 @@
 </template>
 
 <style lang="scss">
-  .l-footer {
-    width: 100%;
+.l-footer {
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  bottom: 0;
+  > .inner {
+    max-width: 980px;
     height: 120px;
-    position: fixed;
-    bottom: 0;
-    > .inner {
-      max-width: 980px;
-      height: 120px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin: 0 auto;
-      padding: 10px 10px;
-      > .logo {
-        width: 100px;
-        height: 100px;
-        display: block;
-      }
-      > .information {
-        >.name {
-          font-size: 24px;
-          // font-family: $family-secondary;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 auto;
+    padding: 10px 10px;
+    > .logo {
+      width: 100px;
+      height: 100px;
+      display: block;
+    }
+    > .information {
+      >.name {
+        font-size: 24px;
+        /* font-family: $family-secondary; */
       }
     }
   }
+}
 </style>
