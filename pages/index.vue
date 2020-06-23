@@ -24,11 +24,18 @@
           img.c-swiper(src='~assets/img/swiper/tap.jpg')
         swiper-slide
           img.c-swiper(src='~assets/img/swiper/blank.jpg')
-        swiper-slide
+    main
+      .c-block#map
+        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
+      .c-block#information
+        .inner
+          img.c-swiper(src='~assets/img/swiper/glass.jpg')
+      .c-block#news
+        .inner
           img.c-swiper(src='~assets/img/swiper/taps.jpg')
-    main.inner
-      #map
-        img.c-swiper(src='~assets/img/swiper/taps.jpg')
+      .c-block#photo
+        .inner
+          img.c-swiper(src='~assets/img/swiper/blank.jpg')
       //- p 四ッ谷荒木町のビールバーJAN(ジャン)です
       //- p 2018年8月1日オープン
       //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
@@ -74,20 +81,30 @@ export default class extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-.l-header {
-  width: 100vw;
-  height: 100vh;
-}
 .l-content {
   > .inner {
     width: 980px;
     margin: 0 auto;
   }
 }
+.l-header {
+  width: 100vw;
+  height: calc(100vh - 120px);
+  position: sticky;
+  top: 0;
+}
 .c-swiper {
   width: 100vw;
   height: calc(100vh - 120px);
   object-fit: cover;
+}
+.c-block {
+  width: 100vw;
+  height: calc(100vh - 120px);
+  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
 }
 @media (max-width: 767px) {
   .l-content {
@@ -95,10 +112,14 @@ export default class extends Vue {}
       width: 100%;
     }
   }
+  .l-header {
+    height: calc(100vh / 7 * 5);
+  }
   .c-swiper {
     height: calc(100vh / 7 * 5);
-    /* height: calc(100vw * 1.414); */
-    /* height: calc(100vw * 1.618); */
+  }
+  .c-block {
+    height: calc(100vh / 7 * 5);
   }
 }
 </style>
