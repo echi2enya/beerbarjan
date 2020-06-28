@@ -33,9 +33,15 @@
           h1.name ビールバーJAN
           p.address 新宿区荒木町2-15 2階
           p.tel 03-3226-1556
-      nuxt-link.arrow(to='' v-scroll-to='"#top"')
-        font-awesome-layers
-          font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
+      .arrow
+        nuxt-link.top(to='' v-scroll-to='"#top"')
+          font-awesome-layers
+            font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
+          //- font-awesome-layers
+            font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
+        nuxt-link.next(to='' v-scroll-to='"#top"')
+          font-awesome-layers
+            font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
         //- p 2018年8月1日オープン
       //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
       //- p カウンター席、テーブル席、立ち飲みカウンター
@@ -48,20 +54,16 @@
 
 <style lang="scss">
 .l-footer {
-  width: 100%;
-  height: 120px;
   position: fixed;
   bottom: 0;
+  width: 100%;
+  height: 100px + 20px;
   background-color: #fff;
 }
 .c-footer {
+  position: relative;
   max-width: 980px;
   height: 100px;
-  // display: flex;
-  // justify-content: flex-start;
-  // align-items: flex-end;
-  // flex-wrap: wrap;
-  position: relative;
   margin: 10px auto;
   > .link {
     > .page {
@@ -110,7 +112,6 @@
     }
   }
   > .information {
-    // height: 100px;
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
@@ -140,12 +141,25 @@
   }
   > .arrow {
     position: absolute;
-    top: -40px;
+    top: - (30px * 2 + 10px);
     right: 0;
-    > .fa-layers {
-      text-align: right;
-      font-size: 30px;
-      color: #fff;
+    display: flex;
+    flex-direction: column;
+    > .top,
+    > .next {
+      > .fa-layers {
+        font-size: 30px;
+        color: #fff;
+        opacity: 0.7;
+      }
+    }
+    > .top {
+      > .fa-layers {
+      }
+    }
+    > .next {
+      > .fa-layers {
+      }
     }
   }
 }
@@ -159,18 +173,19 @@
     // align-items: stretch;
     height: auto;
     display: block;
-    margin: {
-      top: 5px;
-      bottom: 5px;
-    }
+    margin-top: 15px;
+    // margin: {
+    //   top: 5px;
+    //   bottom: 5px;
+    // }
     padding: {
-      left: 5px;
-      right: 5px;
+      left: 10px;
+      right: 10px;
     }
     > .link {
       > .page {
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         text-align: center;
       }
       > .external {
@@ -203,6 +218,7 @@
       }
     }
     > .arrow {
+      top: - (30px * 2 + 15px);
       right: 10px;
     }
   }
