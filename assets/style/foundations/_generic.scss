@@ -4,4 +4,12 @@ html {
 body {
   font-size: 1.4rem;
   line-height: 1.4;
+  color: #333;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }

@@ -3,7 +3,6 @@
     .c-footer
       .link
         nav.page
-          nuxt-link.anchor(to='' v-scroll-to='"#top"') TOP
           nuxt-link.anchor(to='' v-scroll-to='"#map"') MAP
           nuxt-link.anchor(to='' v-scroll-to='"#information"') INFORMATION
           nuxt-link.anchor(to='' v-scroll-to='"#news"') NEW
@@ -15,17 +14,17 @@
           nuxt-link.anchor(to='#news') NEW
           nuxt-link.anchor(to='#photo') PHOTO
         nav.external
-          a.anchor(href='https://twitter.com/beerbarjan' target='_blank')
-            font-awesome-layers(class='fa-fw fa-2x')
+          a.anchor.-twitter(href='https://twitter.com/beerbarjan' target='_blank')
+            font-awesome-layers
               font-awesome-icon(:icon='["fab", "twitter"]')
-          a.anchor(href='https://www.facebook.com/pages/category/Product-Service/%E3%83%93%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC-JAN-1739676409488264/' target='_blank')
-            font-awesome-layers(class='fa-fw fa-2x')
+          a.anchor.-facebook(href='https://www.facebook.com/pages/category/Product-Service/%E3%83%93%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BC-JAN-1739676409488264/' target='_blank')
+            font-awesome-layers
               font-awesome-icon(:icon='["fab", "facebook"]')
-          a.anchor(href='https://www.google.com/maps/place/%E3%80%92160-0007+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%8D%92%E6%9C%A8%E7%94%BA+2%E9%9A%8E+%E5%89%8D%E7%94%B0%E3%83%93%E3%83%AB+%E3%83%93%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BCJAN/@35.6887204,139.7224245,17z/data=!4m2!3m1!1s0x60188d5478ef5331:0x567a2eb3b90b0a8e' target='_blank')
-            font-awesome-layers(class='fa-fw fa-2x')
+          a.anchor.-google(href='https://www.google.com/maps/place/%E3%80%92160-0007+%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%8D%92%E6%9C%A8%E7%94%BA+2%E9%9A%8E+%E5%89%8D%E7%94%B0%E3%83%93%E3%83%AB+%E3%83%93%E3%83%BC%E3%83%AB%E3%83%90%E3%83%BCJAN/@35.6887204,139.7224245,17z/data=!4m2!3m1!1s0x60188d5478ef5331:0x567a2eb3b90b0a8e' target='_blank')
+            font-awesome-layers
               font-awesome-icon(:icon='["fab", "google"]')
-          a.anchor(href='https://tabelog.com/tokyo/A1309/A130903/13225631/' target='_blank')
-            font-awesome-layers(class='fa-fw fa-2x')
+          a.anchor.-tabelog(href='https://tabelog.com/tokyo/A1309/A130903/13225631/' target='_blank')
+            font-awesome-layers
               font-awesome-icon(:icon='["fas", "utensils"]')
       .information
         img.logo(src='~assets/img/logo/279x279.jpg')
@@ -34,7 +33,10 @@
           h1.name ビールバーJAN
           p.address 新宿区荒木町2-15 2階
           p.tel 03-3226-1556
-      //- p 2018年8月1日オープン
+      nuxt-link.arrow(to='' v-scroll-to='"#top"')
+        font-awesome-layers
+          font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
+        //- p 2018年8月1日オープン
       //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
       //- p カウンター席、テーブル席、立ち飲みカウンター
       //- p
@@ -77,8 +79,32 @@
       bottom: 0;
       right: 0;
       > .anchor {
+        color: #999;
+        &.-twitter {
+          &:hover {
+            color: #55acee;
+          }
+        }
+        &.-facebook {
+          &:hover {
+            color: #3b5998;
+          }
+        }
+        &.-google {
+          &:hover {
+            color: #dd5144;
+          }
+        }
+        &.-tabelog {
+          &:hover {
+            color: #fd9628;
+          }
+        }
         + .anchor {
-          margin-left: 5px;
+          margin-left: 10px;
+        }
+        > .fa-layers {
+          font-size: 26px;
         }
       }
     }
@@ -112,6 +138,16 @@
       }
     }
   }
+  > .arrow {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    > .fa-layers {
+      text-align: right;
+      font-size: 30px;
+      color: #fff;
+    }
+  }
 }
 @media (max-width: 767px) {
   .l-footer {
@@ -131,19 +167,13 @@
       left: 5px;
       right: 5px;
     }
-    // align-items: flex-end;
-    // padding: {
-    //   top: 10px;
-    // }
     > .link {
       > .page {
-        // flex-basis: 100%;
         position: relative;
         margin-bottom: 10px;
         text-align: center;
       }
       > .external {
-        // flex-basis: 100%;
         position: relative;
         margin-bottom: 20px;
         text-align: center;
@@ -152,27 +182,28 @@
     > .information {
       align-items: flex-end;
       > .logo {
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
       }
       > .text {
-        // display: flex;
         flex-direction: column;
         margin-left: 10px;
-        > .arakicho,
-        > .address,
-        > .tel {
-          font-size: 1.0rem;
-        }
         > .name,
         > .address,
         > .tel {
           margin-left: 0;
         }
+        > .address,
+        > .tel {
+          font-size: 1.2rem;
+        }
         > .name {
-          font-size: 1.4rem;
+          font-size: 1.8rem;
         }
       }
+    }
+    > .arrow {
+      right: 10px;
     }
   }
 }

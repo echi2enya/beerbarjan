@@ -4,10 +4,10 @@
       swiper(
         :options = {
           effect: 'fade',
-          speed: 1000,
+          speed: 2000,
           loop: true,
           autoplay: {
-            delay: 3000,
+            delay: 0,
             disableOnInteraction: false
           }
         }
