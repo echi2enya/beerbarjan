@@ -7,12 +7,6 @@
           nuxt-link.anchor(to='' v-scroll-to='"#information"') INFORMATION
           nuxt-link.anchor(to='' v-scroll-to='"#news"') NEW
           nuxt-link.anchor(to='' v-scroll-to='"#photo"') PHOTO
-        //- nav.nav
-          nuxt-link.anchor(to='#top') TOP
-          nuxt-link.anchor(to='#map') MAP
-          nuxt-link.anchor(to='#informationn') INFORMATION
-          nuxt-link.anchor(to='#news') NEW
-          nuxt-link.anchor(to='#photo') PHOTO
         nav.external
           a.anchor.-twitter(href='https://twitter.com/beerbarjan' target='_blank')
             font-awesome-layers
@@ -36,7 +30,7 @@
       .arrow
         nuxt-link.top(to='' v-scroll-to='"#top"')
           font-awesome-layers
-            font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
+            font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
           //- font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
         nuxt-link.next(to='' v-scroll-to='"#top"')
@@ -52,13 +46,19 @@
       //- p クラフトビールは日々替わります！
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .l-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 100px + 20px;
+  height: 100px + 10px * 2;
   background-color: #fff;
+  .l-container.-scroll-top & {
+    bottom: - (100px + 10px * 2);
+    // top: 100vh;
+    // bottom: auto;
+    // bottom: - (100px + 10px * 2);
+  }
 }
 .c-footer {
   position: relative;
@@ -73,6 +73,8 @@
       > .anchor {
         + .anchor {
           margin-left: 10px;
+          padding-left: 10px;
+          border-left: 1px solid #999;
         }
       }
     }
@@ -83,22 +85,22 @@
       > .anchor {
         color: #999;
         &.-twitter {
-          &:hover {
+          &:active {
             color: #55acee;
           }
         }
         &.-facebook {
-          &:hover {
+          &:active {
             color: #3b5998;
           }
         }
         &.-google {
-          &:hover {
+          &:active {
             color: #dd5144;
           }
         }
         &.-tabelog {
-          &:hover {
+          &:active {
             color: #fd9628;
           }
         }
@@ -106,7 +108,7 @@
           margin-left: 10px;
         }
         > .fa-layers {
-          font-size: 26px;
+          font-size: 2.6rem;
         }
       }
     }
@@ -166,18 +168,12 @@
 @media (max-width: 767px) {
   .l-footer {
     height: auto;
+    // height: 155px;
   }
   .c-footer {
-    // height: calc(100% - 20px);
-    // flex-direction: column;
-    // align-items: stretch;
-    height: auto;
-    display: block;
-    margin-top: 15px;
-    // margin: {
-    //   top: 5px;
-    //   bottom: 5px;
-    // }
+    height: 100%;
+    // display: block;
+    margin-top: 20px;
     padding: {
       left: 10px;
       right: 10px;
@@ -185,13 +181,28 @@
     > .link {
       > .page {
         position: relative;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+        font-size: 1.6rem;
         text-align: center;
       }
       > .external {
-        position: relative;
-        margin-bottom: 20px;
-        text-align: center;
+        width: 32px * 2 + 10px;
+        right: 10px;
+        > .anchor {
+          display: inline-block;
+          + .anchor {
+            margin-left: 0;
+          }
+          &:nth-child(even) {
+            margin-left: 10px;
+          }
+          &:nth-child(even) {
+            margin-top: 10px;
+          }
+          > .fa-layers {
+            font-size: 3.2rem;
+          }
+        }
       }
     }
     > .information {
@@ -218,7 +229,7 @@
       }
     }
     > .arrow {
-      top: - (30px * 2 + 15px);
+      top: - (30px * 2 + 20px);
       right: 10px;
     }
   }

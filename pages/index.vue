@@ -1,5 +1,5 @@
 <template lang="pug">
-  .l-content
+  .l-content#top(ontouchstart='')
     header.l-header
       swiper(
         :options = {
@@ -89,18 +89,24 @@ export default class extends Vue {}
 }
 .l-header {
   width: 100vw;
-  height: calc(100vh - 120px);
+  height: calc(100vh - (100px + 10px * 2));
   position: sticky;
   top: 0;
+  .l-container.-scroll-top & {
+    height: 100vh;
+  }
 }
 .c-swiper {
   width: 100vw;
-  height: calc(100vh - 120px);
+  height: calc(100vh - (100px + 10px * 2));
   object-fit: cover;
+  .l-container.-scroll-top & {
+    height: 100vh;
+  }
 }
 .c-block {
   width: 100vw;
-  height: calc(100vh - 120px);
+  height: calc(100vh - (100px + 10px * 2));
   position: relative;
   position: sticky;
   top: 0;

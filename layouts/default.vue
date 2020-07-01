@@ -1,5 +1,5 @@
 <template lang="pug">
-  .l-container#top
+  .l-container(:class='{ "-scroll-top" : scrollPosition }')
     nuxt
     Footer
 </template>
@@ -14,7 +14,9 @@ import Footer from '~/components/Footer.vue'
   }
 })
 
-export default class extends Vue {}
+export default class extends Vue {
+  private scrollPosition: boolean = false
+}
 </script>
 
 <style lang="scss">
