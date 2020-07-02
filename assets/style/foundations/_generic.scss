@@ -1,11 +1,23 @@
 html {
   font-size: 10px;
+
+  // disable bound
+  // height: 100%;
+  // overflow: hidden;
 }
 body {
   font-family: $family-primary;
   font-size: 1.4rem;
   line-height: 1.4;
   color: #333;
+
+  // disable bound
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // overflow: auto;
 }
 a {
   color: #333;

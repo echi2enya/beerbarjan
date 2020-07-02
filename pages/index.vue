@@ -1,29 +1,30 @@
 <template lang="pug">
   .l-content#top(ontouchstart='')
     header.l-header
-      swiper(
-        :options = {
-          effect: 'fade',
-          speed: 2000,
-          loop: true,
-          autoplay: {
-            delay: 0,
-            disableOnInteraction: false
+      client-only
+        swiper(
+          :options = {
+            effect: 'fade',
+            speed: 2000,
+            loop: true,
+            autoplay: {
+              delay: 0,
+              disableOnInteraction: false
+            }
           }
-        }
-      )
-        swiper-slide
-          img.c-swiper(src='~assets/img/swiper/hieda.jpg')
-        swiper-slide
-          img.c-swiper(src='~assets/img/swiper/counter.jpg')
-        swiper-slide
-          img.c-swiper(src='~assets/img/swiper/glass.jpg')
-        swiper-slide
-          img.c-swiper(src='~assets/img/swiper/sign.jpg')
-        swiper-slide
-          img.c-swiper(src='~assets/img/swiper/tap.jpg')
-        swiper-slide
-          img.c-swiper(src='~assets/img/swiper/blank.jpg')
+        )
+          swiper-slide
+            img.c-swiper(src='~assets/img/swiper/hieda.jpg')
+          swiper-slide
+            img.c-swiper(src='~assets/img/swiper/counter.jpg')
+          swiper-slide
+            img.c-swiper(src='~assets/img/swiper/glass.jpg')
+          swiper-slide
+            img.c-swiper(src='~assets/img/swiper/sign.jpg')
+          swiper-slide
+            img.c-swiper(src='~assets/img/swiper/tap.jpg')
+          swiper-slide
+            img.c-swiper(src='~assets/img/swiper/blank.jpg')
     main
       .c-block#map
         iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
@@ -92,7 +93,8 @@ export default class extends Vue {}
   height: calc(100vh - (100px + 10px * 2));
   position: sticky;
   top: 0;
-  .l-container.-scroll-top & {
+  transition: 0.25s ease-out;
+  .l-container.-offsetY_0 & {
     height: 100vh;
   }
 }
@@ -100,7 +102,7 @@ export default class extends Vue {}
   width: 100vw;
   height: calc(100vh - (100px + 10px * 2));
   object-fit: cover;
-  .l-container.-scroll-top & {
+  .l-container.-offsetY_0 & {
     height: 100vh;
   }
 }
@@ -118,14 +120,10 @@ export default class extends Vue {}
       width: 100%;
     }
   }
-  .l-header {
-    height: calc(100vh / 7 * 5);
-  }
-  .c-swiper {
-    height: calc(100vh / 7 * 5);
-  }
+  .l-header,
+  .c-swiper,
   .c-block {
-    height: calc(100vh / 7 * 5);
+    height: calc(100vh - 155px);
   }
 }
 </style>

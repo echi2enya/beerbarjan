@@ -51,19 +51,18 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 100px + 10px * 2;
+  min-height: 100px + 10px * 2;
   background-color: #fff;
-  .l-container.-scroll-top & {
+  // transition: 0.25s ease-out;
+  .l-container.-offsetY_0 & {
+    opacity: 0;
     bottom: - (100px + 10px * 2);
-    // top: 100vh;
-    // bottom: auto;
-    // bottom: - (100px + 10px * 2);
   }
 }
 .c-footer {
   position: relative;
   max-width: 980px;
-  height: 100px;
+  height: 100%;
   margin: 10px auto;
   > .link {
     > .page {
@@ -167,12 +166,12 @@
 }
 @media (max-width: 767px) {
   .l-footer {
-    height: auto;
-    // height: 155px;
+    min-height: 155px;
+    .l-container.-offsetY_0 & {
+      bottom: -155px;
+    }
   }
   .c-footer {
-    height: 100%;
-    // display: block;
     margin-top: 20px;
     padding: {
       left: 10px;
