@@ -55,14 +55,15 @@
   background-color: #fff;
   // transition: 0.25s ease-out;
   .l-container.-offsetY_0 & {
-    opacity: 0;
-    bottom: - (100px + 10px * 2);
+    background-color: transparent;
+    // opacity: 0;
+    // bottom: - (100px + 10px * 2);
   }
 }
 .c-footer {
   position: relative;
   max-width: 980px;
-  height: 100%;
+  height: 100px;
   margin: 10px auto;
   > .link {
     > .page {
@@ -84,21 +85,25 @@
       > .anchor {
         color: #999;
         &.-twitter {
+          &:hover,
           &:active {
             color: #55acee;
           }
         }
         &.-facebook {
+          &:hover,
           &:active {
             color: #3b5998;
           }
         }
         &.-google {
+          &:hover,
           &:active {
             color: #dd5144;
           }
         }
         &.-tabelog {
+          &:hover,
           &:active {
             color: #fd9628;
           }
@@ -110,6 +115,9 @@
           font-size: 2.6rem;
         }
       }
+    }
+    .l-container.-offsetY_0 & {
+      opacity: 0;
     }
   }
   > .information {
@@ -137,6 +145,9 @@
       }
       > .tel {
         margin-left: 10px;
+      }
+      .l-container.-offsetY_0 & {
+        opacity: 0;
       }
     }
   }
@@ -168,7 +179,7 @@
   .l-footer {
     min-height: 155px;
     .l-container.-offsetY_0 & {
-      bottom: -155px;
+      // bottom: -155px;
     }
   }
   .c-footer {
