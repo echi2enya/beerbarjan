@@ -26,11 +26,16 @@ export default class extends Vue {
   private scroll() {
     if (this.flag) {
       this.flag = false
+      this.pageOffsetY()
       setTimeout(() => {
-        this.offsetY_0 = window.pageYOffset === 0 ? true : false
+        this.pageOffsetY()
         this.flag = true
-      }, 200)
+      }, 100)
     }
+  }
+
+  private pageOffsetY() {
+    this.offsetY_0 = window.pageYOffset === 0 ? true : false
   }
 }
 </script>

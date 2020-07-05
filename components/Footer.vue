@@ -36,7 +36,7 @@
         nuxt-link.next(to='' v-scroll-to='"#top"')
           font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
-        //- p 2018年8月1日オープン
+      //- p 2018年8月1日オープン
       //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
       //- p カウンター席、テーブル席、立ち飲みカウンター
       //- p
@@ -52,20 +52,31 @@
   bottom: 0;
   width: 100%;
   min-height: 100px + 10px * 2;
+  padding: 10px;
+  // padding: {
+  //   left: 10px;
+  //   right: 10px;
+  // }
   background-color: #fff;
-  // transition: 0.25s ease-out;
+  transition: none;
   .l-container.-offsetY_0 & {
     background-color: transparent;
-    // opacity: 0;
-    // bottom: - (100px + 10px * 2);
+    transition: 0.2s ease-in;
   }
 }
 .c-footer {
   position: relative;
   max-width: 980px;
   height: 100px;
-  margin: 10px auto;
+  // margin: 10px auto;
+  margin: {
+    left: auto;
+    right: auto;
+  }
   > .link {
+    .l-container.-offsetY_0 & {
+      opacity: 0;
+    }
     > .page {
       position: absolute;
       top: 0;
@@ -116,9 +127,6 @@
         }
       }
     }
-    .l-container.-offsetY_0 & {
-      opacity: 0;
-    }
   }
   > .information {
     display: flex;
@@ -134,6 +142,9 @@
       justify-content: flex-start;
       align-items: baseline;
       margin-left: 20px;
+      .l-container.-offsetY_0 & {
+        opacity: 0;
+      }
       > .arakicho {
       }
       > .name {
@@ -145,9 +156,6 @@
       }
       > .tel {
         margin-left: 10px;
-      }
-      .l-container.-offsetY_0 & {
-        opacity: 0;
       }
     }
   }
@@ -166,6 +174,9 @@
       }
     }
     > .top {
+      .l-container.-offsetY_0 & {
+        display: none;
+      }
       > .fa-layers {
       }
     }
@@ -177,17 +188,15 @@
 }
 @media (max-width: 767px) {
   .l-footer {
-    min-height: 155px;
-    .l-container.-offsetY_0 & {
-      // bottom: -155px;
-    }
+    // min-height: 155px;
   }
   .c-footer {
-    margin-top: 20px;
-    padding: {
-      left: 10px;
-      right: 10px;
-    }
+    height: auto;
+    // margin-top: 20px;
+    // padding: {
+    //   left: 10px;
+    //   right: 10px;
+    // }
     > .link {
       > .page {
         position: relative;
@@ -197,7 +206,7 @@
       }
       > .external {
         width: 32px * 2 + 10px;
-        right: 10px;
+        // right: 10px;
         > .anchor {
           display: inline-block;
           + .anchor {
@@ -239,8 +248,8 @@
       }
     }
     > .arrow {
-      top: - (30px * 2 + 20px);
-      right: 10px;
+      top: - (30px * 2 + 10px);
+      right: 0;
     }
   }
 }

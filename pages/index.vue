@@ -91,20 +91,22 @@ export default class extends Vue {}
 .l-header {
   width: 100vw;
   height: calc(100vh - (100px + 10px * 2));
+  // height: 100vh;
   position: sticky;
   top: 0;
-  transition: 0.25s ease-out;
+  // transition: 0.25s ease-out;
   .l-container.-offsetY_0 & {
     height: 100vh;
   }
 }
 .c-swiper {
   width: 100vw;
-  height: calc(100vh - (100px + 10px * 2));
+  // height: calc(100vh - (100px + 10px * 2));
+  height: 100vh;
   object-fit: cover;
-  .l-container.-offsetY_0 & {
-    height: 100vh;
-  }
+  // .l-container.-offsetY_0 & {
+  //   height: 100vh;
+  // }
 }
 .c-block {
   width: 100vw;
@@ -120,10 +122,11 @@ export default class extends Vue {}
       width: 100%;
     }
   }
-  .l-header,
-  .c-swiper,
+  // .l-header,
+  // .c-swiper,
   .c-block {
-    height: calc(100vh - 155px);
+    // height: calc(100vh - 142px);
+    height: calc(100vh - (10px + 14px * 1.5 + 20px + 80px + 10px));
   }
 }
 </style>
