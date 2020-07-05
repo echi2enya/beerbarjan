@@ -4,15 +4,25 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'ビールバーJAN - 四ッ谷荒木町',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: '四ッ谷荒木町のビールバーJAN(ジャン)です。2018年8月1日オープン。クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ。カウンター席、テーブル席、立ち飲みカウンター。日曜日定休。(月曜日が祝日の場合、土日営業し、月曜日がお休み)クラフトビールは日々替わります！新宿区荒木町2-15 2階 03-3226-1556'
       },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: '四ッ谷,荒木町,ビールバー,JAN,ジャン,クラフトビール,樽生,ヱビス,鶏のからあげ,カウンター席,テーブル席,立ち飲みカウンター',
+        'xml:lang': 'ja',
+        lang: 'ja'
+      }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
@@ -21,9 +31,25 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Noto+Serif+JP:400,500,700&display=swap&subset=japanese'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: `/favicon-16x16.png`
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: `/favicon-32x32.png`
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: `/apple-touch-icon.png`
       }
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    ]
   },
   /*
    ** Customize the progress-bar color
