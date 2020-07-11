@@ -21,7 +21,7 @@
             font-awesome-layers
               font-awesome-icon(:icon='["fas", "utensils"]')
       .information
-        img.logo(src='~assets/img/logo/279x279.jpg')
+        img.logo(src='~assets/img/logo.jpg')
         .text
           p.arakicho 四ッ谷荒木町
           h1.name ビールバーJAN
@@ -54,6 +54,7 @@
   border-top: 1px solid #ccc;
   background-color: #fff;
   transition: none;
+  z-index: 99;
   .l-container.-offsetY_0 & {
     border-top: none;
     background-color: transparent;
