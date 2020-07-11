@@ -49,6 +49,9 @@ export default {
         sizes: '180x180',
         href: `/apple-touch-icon.png`
       }
+    ],
+    script: [
+      { src: 'https://platform.twitter.com/widgets.js' }
     ]
   },
   /*

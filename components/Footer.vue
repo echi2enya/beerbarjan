@@ -3,10 +3,10 @@
     .c-footer
       .link
         nav.page
-          nuxt-link.anchor(to='' v-scroll-to='"#map"') MAP
           nuxt-link.anchor(to='' v-scroll-to='"#information"') INFORMATION
-          nuxt-link.anchor(to='' v-scroll-to='"#news"') NEW
-          nuxt-link.anchor(to='' v-scroll-to='"#photo"') PHOTO
+          nuxt-link.anchor(to='' v-scroll-to='"#menu"') MENU
+          //- nuxt-link.anchor(to='' v-scroll-to='"#photo"') PHOTO
+          nuxt-link.anchor(to='' v-scroll-to='"#map"') MAP
         nav.external
           a.anchor.-twitter(href='https://twitter.com/beerbarjan' target='_blank')
             font-awesome-layers
@@ -27,13 +27,11 @@
           h1.name ビールバーJAN
           p.address 新宿区荒木町2-15 2階
           p.tel 03-3226-1556
-      .arrow
-        nuxt-link.top(to='' v-scroll-to='"#top"')
+      .arrows
+        nuxt-link.arrow.-top(to='' v-scroll-to='"#top"')
           font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
-          //- font-awesome-layers
-            font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
-        nuxt-link.next(to='' v-scroll-to='"#top"')
+        nuxt-link.arrow.-next(to='' v-scroll-to='"#top"')
           font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
       //- p 2018年8月1日オープン
@@ -53,13 +51,11 @@
   width: 100%;
   min-height: 100px + 10px * 2;
   padding: 10px;
-  // padding: {
-  //   left: 10px;
-  //   right: 10px;
-  // }
+  border-top: 1px solid #ccc;
   background-color: #fff;
   transition: none;
   .l-container.-offsetY_0 & {
+    border-top: none;
     background-color: transparent;
     transition: 0.2s ease-in;
   }
@@ -68,7 +64,6 @@
   position: relative;
   max-width: 980px;
   height: 100px;
-  // margin: 10px auto;
   margin: {
     left: auto;
     right: auto;
@@ -159,44 +154,37 @@
       }
     }
   }
-  > .arrow {
+  > .arrows {
     position: absolute;
     top: - (30px * 2 + 10px);
     right: 0;
     display: flex;
     flex-direction: column;
-    > .top,
-    > .next {
+    > .arrow {
       > .fa-layers {
         font-size: 30px;
-        color: #fff;
+        color: #eee;
         opacity: 0.7;
       }
-    }
-    > .top {
-      .l-container.-offsetY_0 & {
-        display: none;
+      &.-top {
+        .l-container.-offsetY_0 & {
+          display: none;
+        }
+        > .fa-layers {
+        }
       }
-      > .fa-layers {
-      }
-    }
-    > .next {
-      > .fa-layers {
+      &.-next {
+        > .fa-layers {
+        }
       }
     }
   }
 }
 @media (max-width: 767px) {
   .l-footer {
-    // min-height: 155px;
   }
   .c-footer {
     height: auto;
-    // margin-top: 20px;
-    // padding: {
-    //   left: 10px;
-    //   right: 10px;
-    // }
     > .link {
       > .page {
         position: relative;
@@ -206,7 +194,6 @@
       }
       > .external {
         width: 32px * 2 + 10px;
-        // right: 10px;
         > .anchor {
           display: inline-block;
           + .anchor {
@@ -238,16 +225,16 @@
         > .tel {
           margin-left: 0;
         }
+        > .name {
+          font-size: 1.8rem;
+        }
         > .address,
         > .tel {
           font-size: 1.2rem;
         }
-        > .name {
-          font-size: 1.8rem;
-        }
       }
     }
-    > .arrow {
+    > .arrows {
       top: - (30px * 2 + 10px);
       right: 0;
     }
