@@ -1,0 +1,13 @@
+.modal {
+  &-wrapper {
+  }
+  &-backdrop {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+  &-content {
+    &-wrapper {
+      display: grid;
+      place-items: center;
+    }
+  }
+}

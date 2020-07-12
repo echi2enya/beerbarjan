@@ -61,13 +61,18 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/style/common.scss', 'swiper/css/swiper.css'],
+  css: [
+    '@/assets/style/common.scss',
+    'swiper/css/swiper.css',
+    'vue-thin-modal/dist/vue-thin-modal.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', ssr: false },
-    '@/plugins/vue-scrollto'
+    '@/plugins/vue-scrollto',
+    '@/plugins/vue-thin-modal'
   ],
   /*
    ** Nuxt.js dev-modules
