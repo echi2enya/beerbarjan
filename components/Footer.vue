@@ -3,9 +3,9 @@
     .c-footer
       .link
         nav.page
+          nuxt-link.anchor(to='' v-scroll-to='"#top"') TOP
           nuxt-link.anchor(to='' v-scroll-to='"#information"') INFORMATION
-          nuxt-link.anchor(to='' v-scroll-to='"#menu"') MENU
-          //- nuxt-link.anchor(to='' v-scroll-to='"#photo"') PHOTO
+          nuxt-link.anchor(to='' v-scroll-to='"#photo"') PHOTO
           nuxt-link.anchor(to='' v-scroll-to='"#map"') MAP
         nav.external
           a.anchor.-twitter(href='https://twitter.com/beerbarjan' target='_blank')
@@ -31,17 +31,9 @@
         nuxt-link.arrow.-top(to='' v-scroll-to='"#top"')
           font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-up"]')
-        nuxt-link.arrow.-next(to='' v-scroll-to='"#top"')
+        nuxt-link.arrow.-next(to='' v-scroll-to='"#information"')
           font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
-      //- p 2018年8月1日オープン
-      //- p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ
-      //- p カウンター席、テーブル席、立ち飲みカウンター
-      //- p
-      //-   | 日曜日定休
-      //-   b
-      //-   | ※月曜日が祝日の場合、土日営業し、月曜日がお休み
-      //- p クラフトビールは日々替わります！
 </template>
 
 <style lang="scss" scoped>
@@ -92,31 +84,27 @@
       > .anchor {
         color: #999;
         &.-twitter {
-          &:hover,
-          &:active {
+          &:hover {
             color: #55acee;
           }
         }
         &.-facebook {
-          &:hover,
-          &:active {
+          &:hover {
             color: #3b5998;
           }
         }
         &.-google {
-          &:hover,
-          &:active {
+          &:hover {
             color: #dd5144;
           }
         }
         &.-tabelog {
-          &:hover,
-          &:active {
+          &:hover {
             color: #fd9628;
           }
         }
         + .anchor {
-          margin-left: 10px;
+          margin-left: 5px;
         }
         > .fa-layers {
           font-size: 2.6rem;
@@ -144,11 +132,11 @@
       > .arakicho {
       }
       > .name {
-        margin-left: 10px;
+        margin-left: 5px;
         font-size: 2.4rem;
       }
       > .address {
-        margin-left: 30px;
+        margin-left: 20px;
       }
       > .tel {
         margin-left: 10px;
@@ -157,15 +145,15 @@
   }
   > .arrows {
     position: absolute;
-    top: - (30px * 2 + 10px);
+    top: - (30px + 10px + 10px);
     right: 0;
     display: flex;
     flex-direction: column;
     > .arrow {
       > .fa-layers {
         font-size: 30px;
-        color: #eee;
-        opacity: 0.7;
+        color: #ddd;
+        opacity: 0.9;
       }
       &.-top {
         .l-container.-offsetY_0 & {
@@ -175,7 +163,11 @@
         }
       }
       &.-next {
+        display: none;
         > .fa-layers {
+        }
+        .l-container.-offsetY_0 & {
+          display: block;
         }
       }
     }
@@ -236,7 +228,6 @@
       }
     }
     > .arrows {
-      top: - (30px * 2 + 10px);
       right: 0;
     }
   }

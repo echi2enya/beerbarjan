@@ -1,5 +1,5 @@
 <template lang="pug">
-  .l-content#top(ontouchstart='')
+  .l-content#top
     header.l-header
       client-only
         swiper(
@@ -14,25 +14,26 @@
           }
         )
           swiper-slide
-            img.c-swiper(src='~assets/img/swiper/hieda.jpg')
+            img.c-header(src='~assets/img/swiper/hieda.jpg')
           swiper-slide
-            img.c-swiper(src='~assets/img/swiper/counter.jpg')
+            img.c-header(src='~assets/img/swiper/counter.jpg')
           swiper-slide
-            img.c-swiper(src='~assets/img/swiper/glass.jpg')
+            img.c-header(src='~assets/img/swiper/glass.jpg')
           swiper-slide
-            img.c-swiper(src='~assets/img/swiper/sign.jpg')
+            img.c-header(src='~assets/img/swiper/sign.jpg')
           swiper-slide
-            img.c-swiper(src='~assets/img/swiper/tap.jpg')
+            img.c-header(src='~assets/img/swiper/tap.jpg')
           swiper-slide
-            img.c-swiper(src='~assets/img/swiper/blank.jpg')
-    main
+            img.c-header(src='~assets/img/swiper/blank.jpg')
+    main.l-main
       .c-block.-information#information
         .inner
           .about
             p
               strong クラフトビールは日々替わります。お楽しみに
             p 2018年8月1日オープン
-            p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ他。カウンター席、テーブル席、立ち飲みカウンター
+            p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ…
+            p カウンター席、テーブル席、立ち飲みカウンター
             p 日曜日定休
               br
               span ※月曜日が祝日の場合、土日営業し月曜日がお休み
@@ -48,10 +49,10 @@
         client-only
           swiper(
             :options = {
-              speed: 3000,
+              speed: 500,
               loop: true,
               autoplay: {
-                delay: 0,
+                delay: 3000,
                 disableOnInteraction: false
               },
               slidesPerView: 3,
@@ -64,139 +65,50 @@
             }
           )
             swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
+              Photo(src='swiper/hieda.jpg')
+              Photo(src='swiper/hieda.jpg')
+              Photo(src='swiper/hieda.jpg')
+              Photo(src='swiper/hieda.jpg')
+              Photo(src='swiper/hieda.jpg')
             swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
+              Photo(src='swiper/counter.jpg')
+              Photo(src='swiper/counter.jpg')
+              Photo(src='swiper/counter.jpg')
+              Photo(src='swiper/counter.jpg')
+              Photo(src='swiper/counter.jpg')
             swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
+              Photo(src='swiper/glass.jpg')
+              Photo(src='swiper/glass.jpg')
+              Photo(src='swiper/glass.jpg')
+              Photo(src='swiper/glass.jpg')
+              Photo(src='swiper/glass.jpg')
             swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
+              Photo(src='swiper/tap.jpg')
+              Photo(src='swiper/tap.jpg')
+              Photo(src='swiper/tap.jpg')
+              Photo(src='swiper/tap.jpg')
+              Photo(src='swiper/tap.jpg')
             swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/counter.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/glass.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/sign.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/tap.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-            swiper-slide
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/blank.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
-              img.c-photo__slide(src='~assets/img/swiper/hieda.jpg')
+              Photo(src='swiper/blank.jpg')
+              Photo(src='swiper/blank.jpg')
+              Photo(src='swiper/blank.jpg')
+              Photo(src='swiper/blank.jpg')
+              Photo(src='swiper/blank.jpg')
       .c-block.-map#map
         iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
-      //- .c-block#photo
-        .inner
-          img.c-swiper(src='~assets/img/swiper/blank.jpg')
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-// import { Tweet, Moment, Timeline } from 'vue-tweet-embed'
-// import Logo from '~/components/Logo.vue'
+import Photo from '~/components/Photo.vue'
 
 @Component({
-  // components: {
-  //   Tweet
-  // }
+  components: {
+    Photo
+  }
 })
 
 export default class extends Vue {
-  // head: {
-  //   title: 'test',
-  //   meta: [
-  //     { charset: 'utf-8' },
-  //     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  //   ]
-  // }
 }
 </script>
 
@@ -209,30 +121,22 @@ export default class extends Vue {
 }
 .l-header {
   width: 100vw;
-  height: calc(100vh - (100px + 10px * 2));
+  height: 100vh;
   position: sticky;
   top: 0;
-  .l-container.-offsetY_0 & {
-    height: 100vh;
-  }
 }
-.c-swiper {
+.l-main {
+  position: sticky;
+  top: 0;
+}
+.c-header {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
 }
-.c-photo {
-  &__slide {
-    height: calc((100vh - (100px + 10px * 2)) / 3);
-    object-fit: cover;
-  }
-}
 .c-block {
   width: 100vw;
-  height: calc(100vh - (100px + 10px * 2));
-  position: relative;
-  position: sticky;
-  top: 0;
+  height: 100vh;
   background-color: #fff;
   &.-information {
     height: auto;
@@ -252,11 +156,17 @@ export default class extends Vue {
       > .about {
         max-width: 50%;
         padding: 10px;
-        p:not(:first-child) {
-          margin-top: 10px;
-        }
-        span {
-          font-size: 1.2rem;
+        p {
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+          font-size: 1.6rem;
+          strong {
+            font-size: 1.8rem;
+          }
+          span {
+            font-size: 1.4rem;
+          }
         }
       }
       > .twitter {
@@ -264,7 +174,6 @@ export default class extends Vue {
     }
   }
   &.-photo {
-    // position: static;
     height: auto;
     background-color: #292f33;
   }
@@ -278,13 +187,7 @@ export default class extends Vue {
       width: 100%;
     }
   }
-  .c-photo {
-    &__slide {
-      // height: calc((100vh - (100px + 10px * 2)) / 5);
-    }
-  }
   .c-block {
-    height: calc(100vh - (10px + 14px * 1.5 + 20px + 80px + 10px));
     &.-information {
       height: auto;
       > .inner {
@@ -299,6 +202,15 @@ export default class extends Vue {
         }
         > .about {
           max-width: none;
+          p {
+            font-size: 1.4rem;
+            strong {
+              font-size: 1.6rem;
+            }
+            span {
+              font-size: 1.2rem;
+            }
+          }
         }
       }
     }
