@@ -31,9 +31,12 @@
           .about
             p
               strong クラフトビールは日々替わります。お楽しみに
+            br
             p 2018年8月1日オープン
+            br
             p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ…
             p カウンター席、テーブル席、立ち飲みカウンター
+            br
             p 日曜日定休
               br
               span ※月曜日が祝日の場合、土日営業し月曜日がお休み
@@ -162,7 +165,7 @@ export default class extends Vue {
           }
           font-size: 1.6rem;
           strong {
-            font-size: 1.8rem;
+            font-size: 2.0rem;
           }
           span {
             font-size: 1.4rem;
