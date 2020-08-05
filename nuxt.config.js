@@ -84,9 +84,33 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     'nuxt-fontawesome'
   ],
+  /*
+   ** PWA setting
+   */
+  manifest: {
+    name: 'BeerBarJAN',
+    short_name: 'JAN',
+    start_url: '/',
+    lang: 'ja',
+    icons: [
+      {
+        src: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png'
+      }
+    ],
+    theme_color: '#000000',
+    background_color: '#000000',
+    display: 'minimal-ui',
+    orientation: 'portrait'
+  },
+  icon: {
+    sizes: [16, 72, 96, 120, 128, 144, 152, 180, 192, 384, 512]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
