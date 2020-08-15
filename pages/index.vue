@@ -29,17 +29,15 @@
       .c-block.-information#information
         .inner
           .about
-            p
-              strong クラフトビールは日々替わります。お楽しみに
-            br
-            p 2018年8月1日オープン
-            br
-            p クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ…
-            p カウンター席、テーブル席、立ち飲みカウンター
-            br
-            p 日曜日定休
+            p.text
+              strong.strong クラフトビールは日々替わります。お楽しみに
+            p.text 2018年8月1日オープン
+            p.text クラフトビール樽生4種、ヱビス樽生、特製の鶏のからあげ…
               br
-              span ※月曜日が祝日の場合、土日営業し月曜日がお休み
+              | カウンター席、テーブル席、立ち飲みカウンター
+            p.text 日曜日定休
+              br
+              span.note ※月曜日が祝日の場合、土日営業し月曜日がお休み
           .twitter
             a(
               class='twitter-timeline'
@@ -67,54 +65,10 @@
               }
             }
           )
-            swiper-slide
-              Photo(src='counter/glass.jpg' name='photo1-1')
-              Photo(src='brewer/sanktgallen/hop/tree.jpg' name='photo1-2')
-              Photo(src='etc/paperLantern.jpg' name='photo1-3')
-              Photo(src='counter/table.jpg' name='photo1-4')
-              Photo(src='etc/sign.jpg' name='photo1-5')
-            swiper-slide
-              Photo(src='corona/door_1.jpg' name='photo2-1')
-              Photo(src='etc/laCachette.jpg' name='photo2-2')
-              Photo(src='card/stand.jpg' name='photo2-3')
-              Photo(src='etc/appearance.jpg' name='photo2-4')
-              Photo(src='brewer/sanktgallen/hop/flower.jpg' name='photo2-5')
-            swiper-slide
-              Photo(src='corona/sticker.jpg' name='photo3-1')
-              Photo(src='brewer/sanktgallen/pinApple.jpg' name='photo3-2')
-              Photo(src='food/assorted/salami.jpg' name='photo3-3')
-              Photo(src='etc/sharikimon.jpg' name='photo3-4')
-              Photo(src='tap/smile.jpg' name='photo3-5')
-            swiper-slide
-              Photo(src='menu/food.jpg' name='photo4-1')
-              Photo(src='food/torisoba/circle.jpg' name='photo4-2')
-              Photo(src='glass/weizen.jpg' name='photo4-3')
-              Photo(src='corona/sign_2.jpg' name='photo4-4')
-              Photo(src='glass/straight.jpg' name='photo4-5')
-            swiper-slide
-              Photo(src='food/assorted/rawHam.jpg' name='photo5-1')
-              Photo(src='glass/drinking.jpg' name='photo5-2')
-              Photo(src='brewer/sanktgallen/shonanGold/tree.jpg' name='photo5-3')
-              Photo(src='hieda/left.jpg' name='photo5-4')
-              Photo(src='corona/door_2.jpg' name='photo5-5')
-            swiper-slide
-              Photo(src='glass/weizen_poster.jpg' name='photo6-1')
-              Photo(src='corona/sign_2.jpg' name='photo6-2')
-              Photo(src='tap/finish.jpg' name='photo6-3')
-              Photo(src='food/assorted/yamaimo.jpg' name='photo6-4')
-              Photo(src='tap/beginning.jpg' name='photo6-5')
-            swiper-slide
-              Photo(src='food/liverPutty.jpg' name='photo7-1')
-              Photo(src='glass/foam.jpg' name='photo7-2')
-              Photo(src='food/torisoba/beer.jpg' name='photo7-3')
-              Photo(src='food/sausage/white.jpg' name='photo7-4')
-              Photo(src='brewer/sanktgallen/shonanGold/box.jpg' name='photo7-5')
-            swiper-slide
-              Photo(src='wall/entrance.jpg' name='photo8-1')
-              Photo(src='tap/foam.jpg' name='photo8-2')
-              Photo(src='menu/beer_width.jpg' name='photo8-3')
-              Photo(src='food/torisoba/zoom.jpg' name='photo8-4')
-              Photo(src='food/karaage.jpg' name='photo8-5')
+            template(v-for='(photo, index) in photosShuffle')
+              swiper-slide(v-if='(index + 1) % 5 === 1')
+                template(v-for='(childPhoto, childIndex) in photosShuffle')
+                  Photo(v-if='childIndex >= index && childIndex < index + 5' :src='childPhoto' :name='"childPhoto" + childIndex')
       .c-block.-map#map
         iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
 </template>
@@ -130,6 +84,61 @@ import Photo from '~/components/Photo.vue'
 })
 
 export default class extends Vue {
+  private photos:Array<string> = [
+    'brewer/sanktgallen/hop/flower.jpg',
+    'brewer/sanktgallen/hop/tree.jpg',
+    'brewer/sanktgallen/pinApple.jpg',
+    'brewer/sanktgallen/shonanGold/box.jpg',
+    'brewer/sanktgallen/shonanGold/tree.jpg',
+    'card/stand.jpg',
+    'corona/door_1.jpg',
+    'corona/door_2.jpg',
+    'corona/sign_1.jpg',
+    'corona/sign_2.jpg',
+    'corona/sticker.jpg',
+    'counter/glass.jpg',
+    'counter/table.jpg',
+    'etc/appearance.jpg',
+    'etc/laCachette.jpg',
+    'etc/paperLantern.jpg',
+    'etc/sharikimon.jpg',
+    'etc/sign.jpg',
+    'food/assorted/rawHam.jpg',
+    'food/assorted/salami.jpg',
+    'food/assorted/yamaimo.jpg',
+    'food/karaage.jpg',
+    'food/liverPutty.jpg',
+    'food/sausage/white.jpg',
+    'food/torisoba/beer.jpg',
+    'food/torisoba/circle.jpg',
+    'food/torisoba/zoom.jpg',
+    'glass/drinking.jpg',
+    'glass/foam.jpg',
+    'glass/straight.jpg',
+    'glass/weizen.jpg',
+    'glass/weizen_poster.jpg',
+    'hieda/left.jpg',
+    'menu/beer_width.jpg',
+    'menu/food.jpg',
+    'tap/beginning.jpg',
+    'tap/finish.jpg',
+    'tap/foam.jpg',
+    'tap/smile.jpg',
+    'wall/entrance.jpg'
+  ]
+
+  private get photosShuffle() {
+    return this.shuffle(this.photos)
+  }
+
+  private shuffle(array:any) {
+    var copy = [], n = array.length, i;
+    while (n) {
+      i = Math.floor(Math.random() * n--);
+      copy.push(array.splice(i, 1)[0]);
+    }
+    return copy;
+  }
 }
 </script>
 
@@ -177,15 +186,15 @@ export default class extends Vue {
       > .about {
         max-width: 50%;
         padding: 10px;
-        p {
-          &:not(:first-child) {
-            margin-top: 10px;
-          }
+        > .text {
           font-size: 1.6rem;
-          strong {
+          &:not(:first-child) {
+            margin-top: 25px;
+          }
+          > .strong {
             font-size: 2.0rem;
           }
-          span {
+          > .note {
             font-size: 1.4rem;
           }
         }
@@ -223,12 +232,12 @@ export default class extends Vue {
         }
         > .about {
           max-width: none;
-          p {
+          > .text {
             font-size: 1.4rem;
-            strong {
+            > .strong {
               font-size: 1.6rem;
             }
-            span {
+            > .note {
               font-size: 1.2rem;
             }
           }
