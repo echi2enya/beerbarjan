@@ -1,5 +1,5 @@
 <template lang="pug">
-  .c-photo
+  .photo-default
     img.thumbnail(:src='require("~/assets/img/" + src)' @click='open')
     modal(:name='name')
       .-zoom(@click='close')
@@ -50,13 +50,16 @@ export default class extends Vue {
     }
   }
 }
-.c-photo {
+%photo {
   > .thumbnail {
     width: calc(100vw / 5);
     height: calc(100vw / 5 / 1.618);
     display: block;
     object-fit: cover;
   }
+}
+.photo-default {
+  @extend %photo;
 }
 @media (max-width: 767px) {
   .modal {
@@ -69,7 +72,7 @@ export default class extends Vue {
       }
     }
   }
-  .c-photo {
+  %photo {
     > .thumbnail {
       width: calc(100vw / 3);
       height: calc(100vw / 3);

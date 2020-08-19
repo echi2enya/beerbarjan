@@ -1,0 +1,16 @@
+%content {
+  > .inner {
+    width: 980px;
+    margin: 0 auto;
+  }
+}
+.content-default {
+  @extend %content;
+}
+@media (max-width: 767px) {
+  %content {
+    > .inner {
+      width: 100%;
+    }
+  }
+}

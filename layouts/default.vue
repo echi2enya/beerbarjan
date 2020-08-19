@@ -1,5 +1,5 @@
 <template lang="pug">
-  .l-container(:class='{ "-offsetY_0" : offsetY_0 }' ref='container')
+  .container-default(:class='{ "-offsetY_0" : offsetY_0 }' ref='container')
     nuxt
     Footer
 </template>
@@ -41,7 +41,10 @@ export default class extends Vue {
 </script>
 
 <style lang="scss">
-.l-container {
+%container {
   position: relative;
+}
+.container-default {
+  @extend %container;
 }
 </style>

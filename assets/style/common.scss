@@ -6,13 +6,14 @@
 
 // fonts
 
-// Layouts
-
 // Components
-
-// Projects
+@import 'components/block';
+@import 'components/content';
+@import 'components/header';
+@import 'components/main';
 
 // Plugins
+@import 'plugins/swiper';
 @import 'plugins/vue-thin-modal';
 
 // Utilities

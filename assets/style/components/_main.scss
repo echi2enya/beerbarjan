@@ -1,0 +1,7 @@
+%main {
+  position: sticky;
+  top: 0;
+}
+.main-default {
+  @extend %main;
+}

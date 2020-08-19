@@ -1,6 +1,6 @@
 <template lang="pug">
-  .l-content#top
-    header.l-header
+  .content-default#top
+    header.header-default
       client-only
         swiper(
           :options = {
@@ -14,19 +14,19 @@
           }
         )
           swiper-slide
-            img.c-header(src='~assets/img/swiper/hieda.jpg')
+            img.header(src='~assets/img/swiper/hieda.jpg')
           swiper-slide
-            img.c-header(src='~assets/img/swiper/counter.jpg')
+            img.header(src='~assets/img/swiper/counter.jpg')
           swiper-slide
-            img.c-header(src='~assets/img/swiper/glass.jpg')
+            img.header(src='~assets/img/swiper/glass.jpg')
           swiper-slide
-            img.c-header(src='~assets/img/swiper/sign.jpg')
+            img.header(src='~assets/img/swiper/sign.jpg')
           swiper-slide
-            img.c-header(src='~assets/img/swiper/tap.jpg')
+            img.header(src='~assets/img/swiper/tap.jpg')
           swiper-slide
-            img.c-header(src='~assets/img/swiper/blank.jpg')
-    main.l-main
-      .c-block.-information#information
+            img.header(src='~assets/img/swiper/blank.jpg')
+    main.main-default
+      .block-information#information
         .inner
           .about
             p.text
@@ -46,7 +46,7 @@
               data-tweet-limit='1'
               data-theme='dark'
             ) Tweets by beerbarjan
-      .c-block.-photo#photo
+      .block-photo#photo
         client-only
           swiper(
             :options = {
@@ -69,7 +69,7 @@
               swiper-slide(v-if='(index + 1) % 5 === 1')
                 template(v-for='(childPhoto, childIndex) in photosShuffle')
                   Photo(v-if='childIndex >= index && childIndex < index + 5' :src='childPhoto' :name='"childPhoto" + childIndex')
-      .c-block.-map#map
+      .block-map#map
         iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
 </template>
 
@@ -141,109 +141,3 @@ export default class extends Vue {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.l-content {
-  > .inner {
-    width: 980px;
-    margin: 0 auto;
-  }
-}
-.l-header {
-  width: 100vw;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-.l-main {
-  position: sticky;
-  top: 0;
-}
-.c-header {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-}
-.c-block {
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  &.-information {
-    height: auto;
-    > .inner {
-      max-width: 980px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin: {
-        left: auto;
-        right: auto;
-      }
-      padding: {
-        top: 15px;
-        bottom: 15px;
-      }
-      > .about {
-        max-width: 50%;
-        padding: 10px;
-        > .text {
-          font-size: 1.6rem;
-          &:not(:first-child) {
-            margin-top: 25px;
-          }
-          > .strong {
-            font-size: 2.0rem;
-          }
-          > .note {
-            font-size: 1.4rem;
-          }
-        }
-      }
-      > .twitter {
-      }
-    }
-  }
-  &.-photo {
-    height: auto;
-    background-color: #292f33;
-  }
-  &.-map {
-    height: 100vh;
-  }
-}
-@media (max-width: 767px) {
-  .l-content {
-    > .inner {
-      width: 100%;
-    }
-  }
-  .c-block {
-    &.-information {
-      height: auto;
-      > .inner {
-        flex-direction: column-reverse;
-        padding: {
-          top: 0;
-          bottom: 0;
-        }
-        > .twitter {
-          width: 100%;
-          background-color: #292f33;
-        }
-        > .about {
-          max-width: none;
-          > .text {
-            font-size: 1.4rem;
-            > .strong {
-              font-size: 1.6rem;
-            }
-            > .note {
-              font-size: 1.2rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-</style>
