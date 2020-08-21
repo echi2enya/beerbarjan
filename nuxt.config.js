@@ -58,6 +58,7 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
+
   /*
    ** Global CSS
    */
@@ -77,7 +78,14 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-2541488-15'
+    }],
+    '@nuxtjs/style-resources'
+  ],
+
   /*
    ** Nuxt.js modules
    */
@@ -85,9 +93,13 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources',
     'nuxt-fontawesome'
   ],
+
+  styleResources: {
+    scss: ['@/assets/style/_styleResources.scss']
+  },
+
   /*
    ** PWA setting
    */
@@ -123,14 +135,13 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
+    extend(config, ctx) {}
     // vendor: [
     //   'vue-awesome-swiper'
     // ]
-
-    styleResources: {
-      scss: ['@/assets/style/_styleResources']
-    }
+    // styleResources: {
+    //   scss: ['@/assets/style/_styleResources']
+    // }
   },
 
   fontawesome: {
