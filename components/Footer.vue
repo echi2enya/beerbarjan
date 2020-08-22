@@ -20,8 +20,8 @@
           a.anchor.-tabelog(href='https://tabelog.com/tokyo/A1309/A130903/13225631/' target='_blank')
             font-awesome-layers
               font-awesome-icon(:icon='["fas", "utensils"]')
-      .information
-        img.logo(src='~assets/img/logo.jpg')
+      .information(:class='{ "-open" : isInformation }')
+        img.logo(src='~assets/img/logo.jpg' @click='isInformation = !isInformation')
         .text
           p.arakicho 四ッ谷荒木町
           h1.name ビールバーJAN
@@ -35,6 +35,16 @@
           font-awesome-layers
             font-awesome-icon(:icon='["fas", "arrow-circle-down"]')
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+
+@Component({})
+
+export default class extends Vue {
+  private isInformation: boolean = false
+}
+</script>
 
 <style lang="scss" scoped>
 %footer {
