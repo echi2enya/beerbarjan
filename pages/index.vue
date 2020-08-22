@@ -13,18 +13,9 @@
             }
           }
         )
-          swiper-slide
-            img.header(src='~assets/img/swiper/hieda.jpg')
-          swiper-slide
-            img.header(src='~assets/img/swiper/counter.jpg')
-          swiper-slide
-            img.header(src='~assets/img/swiper/glass.jpg')
-          swiper-slide
-            img.header(src='~assets/img/swiper/sign.jpg')
-          swiper-slide
-            img.header(src='~assets/img/swiper/tap.jpg')
-          swiper-slide
-            img.header(src='~assets/img/swiper/blank.jpg')
+          template(v-for='src in headerData')
+            swiper-slide
+              img.header(:src='require("~/assets/img/" + src)')
     main.main-default
       .block-information#information
         .inner
@@ -65,10 +56,10 @@
               }
             }
           )
-            template(v-for='(photo, index) in photosShuffle')
+            template(v-for='(src, index) in photoData')
               swiper-slide(v-if='(index + 1) % 5 === 1')
-                template(v-for='(childPhoto, childIndex) in photosShuffle')
-                  Photo(v-if='childIndex >= index && childIndex < index + 5' :src='childPhoto' :name='"childPhoto" + childIndex')
+                template(v-for='(childSrc, childIndex) in photoData')
+                  Photo(v-if='childIndex >= index && childIndex < index + 5' :src='childSrc' :name='"photo" + childIndex')
       .block-map#map
         iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
 </template>
@@ -76,6 +67,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import Photo from '~/components/Photo.vue'
+import swiperData from '~/assets/json/swiper.json'
 
 @Component({
   components: {
@@ -84,51 +76,12 @@ import Photo from '~/components/Photo.vue'
 })
 
 export default class extends Vue {
-  private photos:Array<string> = [
-    'brewer/sanktgallen/hop/flower.jpg',
-    'brewer/sanktgallen/hop/tree.jpg',
-    'brewer/sanktgallen/pinApple.jpg',
-    'brewer/sanktgallen/shonanGold/box.jpg',
-    'brewer/sanktgallen/shonanGold/tree.jpg',
-    'card/stand.jpg',
-    'corona/door_1.jpg',
-    'corona/door_2.jpg',
-    'corona/sign_1.jpg',
-    'corona/sign_2.jpg',
-    'corona/sticker.jpg',
-    'counter/glass.jpg',
-    'counter/table.jpg',
-    'etc/appearance.jpg',
-    'etc/laCachette.jpg',
-    'etc/paperLantern.jpg',
-    'etc/sharikimon.jpg',
-    'etc/sign.jpg',
-    'food/assorted/rawHam.jpg',
-    'food/assorted/salami.jpg',
-    'food/assorted/yamaimo.jpg',
-    'food/karaage.jpg',
-    'food/liverPutty.jpg',
-    'food/sausage/white.jpg',
-    'food/torisoba/beer.jpg',
-    'food/torisoba/circle.jpg',
-    'food/torisoba/zoom.jpg',
-    'glass/drinking.jpg',
-    'glass/foam.jpg',
-    'glass/straight.jpg',
-    'glass/weizen.jpg',
-    'glass/weizen_poster.jpg',
-    'hieda/left.jpg',
-    'menu/beer_width.jpg',
-    'menu/food.jpg',
-    'tap/beginning.jpg',
-    'tap/finish.jpg',
-    'tap/foam.jpg',
-    'tap/smile.jpg',
-    'wall/entrance.jpg'
-  ]
+  private get headerData() {
+    return this.shuffle(swiperData.header)
+  }
 
-  private get photosShuffle() {
-    return this.shuffle(this.photos)
+  private get photoData() {
+    return this.shuffle(swiperData.photo)
   }
 
   private shuffle(array:any) {
