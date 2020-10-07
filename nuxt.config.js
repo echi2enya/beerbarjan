@@ -52,6 +52,7 @@ export default {
     ],
     script: [
       { src: 'https://platform.twitter.com/widgets.js' }
+      // { src: 'https://www.youtube.com/iframe_api' }
     ]
   },
   /*
@@ -72,6 +73,7 @@ export default {
    */
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', ssr: false },
+    { src: '@/plugins/vue-youtube-embed', ssr: false },
     '@/plugins/vue-scrollto',
     '@/plugins/vue-thin-modal'
   ],
