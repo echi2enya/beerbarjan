@@ -16,6 +16,10 @@
 .block-default {
   @extend %block;
 }
+.block-youtube {
+  @extend %block;
+  height: 100vh;
+}
 .block-information {
   @extend %block;
   > .inner {

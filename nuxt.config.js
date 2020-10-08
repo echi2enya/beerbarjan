@@ -73,7 +73,8 @@ export default {
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', ssr: false },
     '@/plugins/vue-scrollto',
-    '@/plugins/vue-thin-modal'
+    '@/plugins/vue-thin-modal',
+    '@/plugins/vue-youtube'
   ],
   /*
    ** Nuxt.js dev-modules

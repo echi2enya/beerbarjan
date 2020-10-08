@@ -17,6 +17,11 @@
             swiper-slide
               img.header(:src='require("~/assets/img/" + src)')
     main.main-default
+      .block-youtube
+        youtube(
+         ref='youtube'
+         video-id='hvIsbzhzanM'
+         style='width:100vw;height:100vh;')
       .block-information#information
         .inner
           .about
