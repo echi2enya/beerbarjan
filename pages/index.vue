@@ -1,6 +1,6 @@
 <template lang="pug">
   .content-default#top
-    header.header-default
+    //- header.header-default
       client-only
         swiper(
           :options = {
@@ -17,12 +17,13 @@
             swiper-slide
               img.header(:src='require("~/assets/img/" + src)')
     main.main-default
-      .block-youtube
+      #player
+      //- .block-youtube
         youtube(
          ref='youtube'
          video-id='hvIsbzhzanM'
          style='width:100vw;height:100vh;')
-      .block-information#information
+      //- .block-information#information
         .inner
           .about
             p.text
@@ -42,7 +43,7 @@
               data-tweet-limit='1'
               data-theme='dark'
             ) Tweets by beerbarjan
-      .block-photo#photo
+      //- .block-photo#photo
         client-only
           swiper(
             :options = {
@@ -65,7 +66,7 @@
               swiper-slide(v-if='(index + 1) % 5 === 1')
                 template(v-for='(childSrc, childIndex) in photoData')
                   Photo(v-if='childIndex >= index && childIndex < index + 5' :src='childSrc' :name='"photo" + childIndex')
-      .block-map#map
+      //- .block-map#map
         iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.524019656593!2d139.720235815259!3d35.68872038019251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d5478ef5331%3A0x567a2eb3b90b0a8e!2z44OT44O844Or44OQ44O8SkFO!5e0!3m2!1sja!2sjp!4v1592832322146!5m2!1sja!2sjp' frameborder='0' style='border:0;width:100%;height:100%;' allowfullscreen='' aria-hidden='false' tabindex='0')
 </template>
 
@@ -81,6 +82,67 @@ import swiperData from '~/assets/json/swiper.json'
 })
 
 export default class extends Vue {
+  // private ytPlayer: any = []
+
+  private mounted() {
+    // const ytPlayer = new YT.Player('player', {
+    //   height: 390,
+    //   width: 640,
+    //   videoId: 'vifZUxk2WgI',
+    //   playerVars: {//パラメータ
+    //     playsinline: 1,// インライン再生指定
+    //     rel: 0,// 再生中の動画と同じチャンネルの関連動画を表示
+    //     controls: 0,// コントローラー出さない
+    //     showinfo: 0// タイトルとか動画情報出さない
+    //   },
+    //   events: {//　イベント
+    //     'onReady': this.onPlayerReady
+    //   }
+    // });
+
+    var ytPlayer;
+
+    // window['onYouTubeIframeAPIReady'] = function() {
+    //   ytPlayer = new window['YT'].Player('player', {
+    //     height: 390,
+    //     width: 640,
+    //     videoId: 'hvIsbzhzanM',
+    //     playerVars: {//パラメータ
+    //       playsinline: 1,// インライン再生指定
+    //       rel: 0,// 再生中の動画と同じチャンネルの関連動画を表示
+    //       controls: 0,// コントローラー出さない
+    //       showinfo: 0// タイトルとか動画情報出さない
+    //     },
+    //     events: {
+    //       'onReady': onPlayerReady
+    //     }
+    //   });
+    // }
+
+    (window as { [key: string]: any })['onYouTubeIframeAPIReady'] = function() {
+      ytPlayer = new (window as { [key: string]: any })['YT'].Player('player', {
+        height: 390,
+        width: 640,
+        videoId: 'hvIsbzhzanM',
+        playerVars: {//パラメータ
+          playsinline: 1,// インライン再生指定
+          rel: 0,// 再生中の動画と同じチャンネルの関連動画を表示
+          controls: 0,// コントローラー出さない
+          showinfo: 0// タイトルとか動画情報出さない
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady() {
+      console.log('onReady')
+      // this.ytPlayer.mute()
+      // this.ytPlayer.playVideo()
+    }
+  }
+
   private get headerData() {
     return this.shuffle(swiperData.header)
   }
@@ -97,5 +159,52 @@ export default class extends Vue {
     }
     return copy;
   }
+
+  // private onPlayerReady(event) {
+  //   document.getElementById("pause").addEventListener("click", function() {
+  //     player.pauseVideo()
+  //   })
+  //   document.getElementById("play").addEventListener("click", function() {
+  //     player.playVideo()
+  //   })
+  // }
+
+  // private onPlayerReady() {
+  //   console.log('onReady')
+  //   // this.ytPlayer.mute()
+  //   // this.ytPlayer.playVideo()
+  // }
+}
+</script>
+
+<script>
+// var tag = document.createElement('script');
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var ytPlayer;
+
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('player', {
+    height: 390,
+    width: 640,
+    videoId: 'hvIsbzhzanM',
+    playerVars: {//パラメータ
+      playsinline: 1,// インライン再生指定
+      rel      : 0,// 再生中の動画と同じチャンネルの関連動画を表示
+      controls: 0,// コントローラー出さない
+      showinfo: 0// タイトルとか動画情報出さない
+    },
+    events: {//　イベント
+      'onReady': onPlayerReady
+    }
+  });
+}
+
+function onPlayerReady() {
+  console.log('onReady')
+  ytPlayer.mute();// ミュートにしてから
+  ytPlayer.playVideo();// 再生
 }
 </script>
