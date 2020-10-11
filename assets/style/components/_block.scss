@@ -16,6 +16,15 @@
 .block-default {
   @extend %block;
 }
+.block-movie {
+  @extend %block;
+  height: 100vw * (1080 / 1920);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  overflow: hidden;
+}
 .block-information {
   @extend %block;
   > .inner {

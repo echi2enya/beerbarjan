@@ -37,6 +37,9 @@
               data-tweet-limit='1'
               data-theme='dark'
             ) Tweets by beerbarjan
+      .block-movie
+        client-only
+          Movie
       .block-photo#photo
         client-only
           swiper(
@@ -66,11 +69,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import Movie from '~/components/Movie.vue'
 import Photo from '~/components/Photo.vue'
 import swiperData from '~/assets/json/swiper.json'
 
 @Component({
   components: {
+    Movie,
     Photo
   }
 })
