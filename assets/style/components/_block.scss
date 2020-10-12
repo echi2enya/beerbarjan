@@ -86,4 +86,9 @@
       }
     }
   }
+  .block-movie {
+    width: 200vw;
+    height: 200vw * (1080 / 1920);
+    margin-left: -25vw;
+  }
 }

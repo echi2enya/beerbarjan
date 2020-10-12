@@ -1,5 +1,5 @@
 <template>
-  <div class="movie" id="js-movie">
+  <div class="block-movie" id="js-movie">
     <script>
       var tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
